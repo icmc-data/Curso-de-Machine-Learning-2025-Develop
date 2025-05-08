@@ -94,7 +94,7 @@ df = pd.read_csv("Amazon.csv")
 R = (df.iloc[:,1:].fillna(np.nan)).to_numpy()
 
 # Train ALS model
-model = Collaborative_Filtering(learning_rate=0.01, termo_de_reg=0.001, epochs=10, hidden_features=50)
+model = Collaborative_Filtering(learning_rate=0.001, termo_de_reg=0.001, epochs=50, hidden_features=50)
 model.fit(R)
 
 print(R)
