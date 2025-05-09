@@ -68,7 +68,7 @@ class Collaborative_Filtering:
                 F_a = self.F[a].reshape(1,-1) # Matriz (1 x K)
 
                 #Somando a Loss total
-                Loss += (1/2)*(  (np.linalg.norm(R_i - F_a@U_i.T))**2 + self.reg*(np.linalg.norm(F_a))**2  )
+                Loss += (1/2)*(  (np.linalg.norm(R_a - F_a@U_i.T))**2 + self.reg*(np.linalg.norm(F_a))**2  )
 
                 # Derivada
                 d = self.reg*F_a - (R_a - F_a@U_i.T)@U_i # Calculando
